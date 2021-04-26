@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My calculator</title>
+</head>
+<body>
+<input type="number" id="inp1" placeholder="Input Number 1">
+<input type="number" id="inp2" placeholder="Input Number 2">
+<button>Add</button>
+<button>Subtract</button>
+<button>Multiply</button>
+<button>Divide</button>
+<h1>Result:</h1>
+
+<script>
+    const buttons = document.querySelectorAll('button')
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const inp1 = document.getElementById('inp1').value;
+            const inp2 = document.getElementById('inp2').value;
+            switch (btn.innerText) {
+                case "Add":
+                    document.querySelector('h1').innerText = `Result: ${Number(inp1)+Number(inp2)}`
+                    break
+                case "Subtract":
+                    document.querySelector('h1').innerText = `Result: ${Number(inp1)-Number(inp2)}`
+                    break
+                case "Multiply":
+                    document.querySelector('h1').innerText = `Result: ${Number(inp1)*Number(inp2)}`
+                    break
+                case "Divide":
+                    document.querySelector('h1').innerText = `Result: ${Number(inp1)/Number(inp2)}`
+                    break
+                default:
+                    console.log('dunno')
+            }
+        })
+    })
+
+</script>
+
+</body>
+</html>
