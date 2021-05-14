@@ -11,7 +11,7 @@
 <button>Subtract</button>
 <button>Multiply</button>
 <button>Divide</button>
-<h1>Result:</h1>
+<h1>Result: <span id="answer"></span></h1>
 
 <script>
     const buttons = document.querySelectorAll('button')
@@ -21,19 +21,19 @@
             const inp2 = document.getElementById('inp2').value;
             switch (btn.innerText) {
                 case "Add":
-                    document.querySelector('h1').innerText = `Result: ${Number(inp1)+Number(inp2)}`
+                    document.querySelector('#answer').innerText = `${Number(inp1)+Number(inp2)}`
                     break
                 case "Subtract":
-                    document.querySelector('h1').innerText = `Result: ${Number(inp1)-Number(inp2)}`
+                    document.querySelector('#answer').innerText = `${Number(inp1)-Number(inp2)}`
                     break
                 case "Multiply":
-                    document.querySelector('h1').innerText = `Result: ${Number(inp1)*Number(inp2)}`
+                    document.querySelector('#answer').innerText = `${Number(inp1)*Number(inp2)}`
                     break
                 case "Divide":
-                    document.querySelector('h1').innerText = `Result: ${Number(inp1)/Number(inp2)}`
+                    document.querySelector('#answer').innerText = `${Number(inp1)/Number(inp2)}`
                     break
                 default:
-                    console.log('dunno')
+                    alert('idk')
             }
         })
     })
